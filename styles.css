@@ -3,12 +3,25 @@
     --menu-bar-height: 10px;
 }
 
+body {
+    background-color: grey;
+}
+
+.container {
+    padding: 20px 0 20px 0;
+    width: var(--menu-bar-width);
+    height: var(--menu-bar-height);
+    cursor: pointer;
+    margin: 50px;
+    /*border: 2px solid red;*/
+}
+
 #menu {
     background-color: #D84282;
     position: relative;
     width: var(--menu-bar-width);
     height: var(--menu-bar-height);
-    margin: 100px;
+    transition: background-color .6s ease-in-out;
 }
 
 #menu::before,
@@ -19,6 +32,7 @@
     width: var(--menu-bar-width);
     height: var(--menu-bar-height);
     position: absolute;
+    transition: all .5s ease-in-out;
 }
 
 #menu::before {
@@ -28,6 +42,23 @@
 
 #menu::after {
     left: 0;
-    top: 20px;
+    bottom: -20px;
 }
+
+.container:hover #menu {
+    background-color: transparent;
+}
+
+.container:hover #menu::after {
+    /*transition: 5s ease-in-out;*/
+    transform: rotate(45deg);
+    bottom: 0;
+
+}
+
+.container:hover #menu::before {
+    transform: rotate(-45deg);
+    top: 0;
+}
+
 
