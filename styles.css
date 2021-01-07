@@ -13,7 +13,6 @@ body {
     height: var(--menu-bar-height);
     cursor: pointer;
     margin: 50px;
-    /*border: 2px solid red;*/
 }
 
 #menu {
